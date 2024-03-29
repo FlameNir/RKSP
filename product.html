@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Стили для изображений */
+      img.product-image {
+        width: 500px;
+        /* Ширина изображения */
+        height: auto;
+        /* Автоматическое масштабирование высоты, чтобы сохранить пропорции */
+        display: block;
+        /* Устанавливаем изображение как блочный элемент */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="product-details">
+      <!-- Здесь будет отображаться информация о товаре -->
+    </div>
+
+    <script>
+      // Получение параметра id из URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id");
+      // Функция для открытия изображения в новом окне
+      function openImage(imageUrl) {
+        window.open(imageUrl, "_blank", "width=auto,height=auto");
+      }
+
+      // Функция для загрузки информации о товаре на основе id
+      function loadProductDetails(productId) {
+        let productName ;
+        let productDescription 
+        let productImage ;
+        let productCharacteristics ;
+
+        // Определение информации о товаре в зависимости от id
+        switch (productId) {
+          case "1":
+            productName = "Абхазия";
+            productDescription =
+              "Абхазия – горный рай на берегу Черного моря, обладающий потрясающими природными красотами и историческим наследием. Путешествие в этот удивительный уголок мира обещает незабываемые впечатления и яркие эмоции.";
+            productImage = "img/abhazia_9.jpg";
+            productCharacteristics = `
+                        <li>Количество дней: 7</li>
+                        <li>Вид отдыха: пляжный, экскурсионный</li>
+                        <li>Проживание: гостиницы 4-5 звезд</li>
+                        <li>Включено: трансфер, экскурсии</li>
+                    `;
+            break;
+          case "2":
+            productName = "Австралия";
+            productDescription =
+              "Австралия – уникальная страна-континент, которая известна своим разнообразием флоры и фауны, живописными пляжами, таинственными красными скалами и древними аборигенскими памятниками.";
+            productImage = "img/australia_3.jpg";
+            productCharacteristics = `
+                        <li>Количество дней: 14</li>
+                        <li>Вид отдыха: природный, активный</li>
+                        <li>Проживание: отели 4-5 звезд</li>
+                        <li>Включено: перелет, проживание, экскурсии</li>
+                    `;
+            break;
+          case "3":
+            productName = "Египет";
+            productDescription =
+              "Египет – страна фараонов, древних пирамид и таинственного Сфинкса. Путешествие по Египту подарит вам возможность окунуться в мир древних цивилизаций, насладиться шикарными пляжами Красного моря и познакомиться с гостеприимством местных жителей.";
+            productImage = "img/egipetskie-piramidy_89.jpg";
+            productCharacteristics = `
+                        <li>Количество дней: 10</li>
+                        <li>Вид отдыха: экскурсионный, пляжный</li>
+                        <li>Проживание: отели 4-5 звезд</li>
+                        <li>Включено: перелет, проживание, питание, экскурсии</li>
+                    `;
+            break;
+          default:
+            productName = "Товар не найден";
+            break;
+        }
+
+        // Формирование HTML-кода для отображения информации о товаре
+        const productHTML = `
+                <h1 class=product-title>Тур по ${productName}</h1>
+                <a href="${productImage}" target="_blank" onclick="openImage('${productImage}')">
+                    <img class="product-image" src="${productImage}" alt="${productName}">
+                </a>
+
+                <h2 class=product-title>Описание</h2>
+                <p class=long-description    >${productDescription}</p>
+                <h2 class=product-title>Характеристики</h2>
+                <ul class=characteristics-list>
+                    ${productCharacteristics}
+                </ul>
+                <footer class="footer">
+                    <div class="container">
+                        <span>&copy; Все права защищены  28.03.2024</span>
+                    </div>
+                </footer>
+            `;
+
+        // Отображение информации о товаре на странице
+        document.getElementById("product-details").innerHTML = productHTML;
+      }
+
+      // Загрузка информации о товаре при загрузке страницы
+      window.onload = function () {
+        loadProductDetails(productId);
+      };
+    </script>
+  </body>
+</html>

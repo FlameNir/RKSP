@@ -1,0 +1,77 @@
+
+
+/* Стили для всех ссылок в меню */
+.navbar-nav .nav-link {
+    color: #333; /* Цвет текста */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: 400; /* Насыщенность шрифта */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+}
+
+
+/* При фокусе на ссылке (например, при нажатии Tab) */
+.navbar-nav .nav-link:focus {
+    outline: none; /* Убираем фокус-обводку при нажатии */
+}
+
+/* Убираем маркеры списка */
+.navbar-nav .nav-item {
+    list-style-type: none; /* Убираем маркеры списка */
+}
+/* 4.	Страница «Товар каталога» */
+/*Заголовки (Краткое описание товара, Характеристики, Подробное описание товара):*/
+.product-title {
+    color: black; /* •	Цвет текста черный.*/
+    font-size: 18px; /* •	Размер шрифта 18px. */
+    font-weight: 400; /* •	Насыщенность шрифта 400. (font-weight) */
+    background-color: rgb(255, 255, 255); /* •	Установите цвет фона по желанию в палитре RGB */
+}
+
+/* Для краткого описания товара:*/
+.short-description {
+    color: rgb(0,0,0); /* •	Цвет текста по желанию в палитре RGB */
+    font-size: 14px; /* •	Размер шрифта 14px*/
+    font-style: italic; /* •	Начертание шрифта italic. (font-style).*/
+    line-height: 16px; /* •	Высоту текста 16px (line-height). */
+}
+
+/* Стили для подробного описания товара */
+.long-description {
+    color: rgb(0,0,0); /* •	Цвет текста по желанию в палитре RGB */
+    font-size: 16px; /* •	Размер шрифта 16px.*/
+    font-weight: 400; /* •	Насыщенность шрифта 400. (font-weight). */
+    line-height: 24px; /*•	Высоту текста 24px (line-height). */
+    text-align: left; /* •	Расположение текста по левому краю (text-align).*/
+}
+
+/* Стили для списка характеристик товара */
+.characteristics-list {
+    list-style-type: none; /* Убираем стандартные маркеры списка */
+    padding-left: 0; /* Убираем отступ слева */
+}
+
+.characteristics-list li {
+    margin-bottom: 5px; /* Добавляем небольшой отступ между характеристиками */
+    padding-left: 20px; /* Добавляем отступ слева для визуального выделения */
+    background-image: url('img/ico_list.png'); /* Задаем изображение в качестве маркера */
+    background-repeat: no-repeat; /* Запрещаем повторение изображения */
+    background-position: left center; /* Устанавливаем позицию изображения */
+    background-size: 16px; /* Задаем размер изображения маркера */
+    line-height: 1.5; /* Высота строки для улучшенного отображения */
+    font-size: 16px; /* Размер шрифта */
+}
+
+
+footer {
+    background-color: rgb(248, 249, 250); 
+    color: rgb(51, 51, 51); 
+    padding: 20px 0; 
+    text-align: center; 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+}
+
+
+
+
